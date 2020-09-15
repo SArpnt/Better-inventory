@@ -2,7 +2,7 @@
 // @name         Better Inventory
 // @description  More items on inventory pages, resizable critter, and sorting
 // @author       SArpnt, idea by Blinking Berry
-// @version      1.0.1
+// @version      1.0.2
 // @namespace    https://boxcrittersmods.ga/authors/sarpnt/
 // @homepage     https://boxcrittersmods.ga/mods/better-inventory/
 // @updateURL    https://github.com/SArpnt/Better-inventory/raw/master/Better%20inventory.user.js
@@ -40,10 +40,7 @@
 		t.innerHTML = t.innerHTML.replace(
 			/o\s*=\s*i\.inventory/,
 			`o = i.inventory${typeof modData.sortMethod == "string" ?
-				`.map(e => world.items.find(i=>i.itemId==e))
-				.sort((a,b) =>
-					a[${JSON.stringify(modData.sortMethod)}] > b[${JSON.stringify(modData.sortMethod)}] ? 1 : -1)
-				.map(e=>e.itemId)` :
+				`.sort((a,b) => client.getItem(a)[${JSON.stringify(modData.sortMethod)}] > client.getItem(b)[${JSON.stringify(modData.sortMethod)}] ? 1 : -1)` :
 				typeof modData.sortMethod == "function" ?
 					`.sort(${modData.sortMethod})` :
 					``
