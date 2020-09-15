@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         Better Inventory
 // @description  More items on inventory pages, resizable critter, and sorting
-// @author       SArpnt
-// @version      1.0.0
+// @author       SArpnt, idea by Blinking Berry
+// @version      1.0.1
 // @namespace    https://boxcrittersmods.ga/authors/sarpnt/
 // @homepage     https://boxcrittersmods.ga/mods/better-inventory/
 // @updateURL    https://github.com/SArpnt/Better-inventory/raw/master/Better%20inventory.user.js
