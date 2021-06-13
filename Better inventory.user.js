@@ -46,8 +46,8 @@
 					``
 			}`
 		).replace(
-			/this\.addChild\s*\(\s*c\s*\)\.setTransform\s*\(\s*540\s*,\s*20\s*\)/,
-			`this.addChild(c).setTransform(
+			/this\.addChild\s*\(\s*l\s*\)\.setTransform\s*\(\s*540\s*,\s*20\s*\)/,
+			`this.addChild(l).setTransform(
 				${855 - modData.critterScale * 440 * .7159090909090909},
 				${(480 - modData.critterScale * 440) / 2}, ${modData.critterScale},
 				${modData.critterScale}
@@ -56,13 +56,13 @@
 			/o\.setTransform\s*\(\s*0\s*,\s*0\s*,\s*.5\s*,\s*.5\s*\)/,
 			`o.setTransform(0, 0, ${1 / modData.scale}, ${1 / modData.scale})`
 		).replace(
-			/new\s*client\.Grid\s*\(600\s*,\s*400\s*,\s*6\s*,\s*4\s*,\s*l\s*\)/,
+			/new\s*client\.Grid\s*\(600\s*,\s*400\s*,\s*6\s*,\s*4\s*,\s*c\s*\)/,
 			`new client.Grid(
 				${modData.width},
 				${modData.height},
 				${modData.columns},
 				${modData.rows},
-				l
+				c
 			)`
 		);
 	});
