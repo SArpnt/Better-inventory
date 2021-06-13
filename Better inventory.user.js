@@ -2,7 +2,7 @@
 // @name         Better Inventory
 // @description  More items on inventory pages, resizable critter, and sorting
 // @author       SArpnt, idea by Blinking Berry
-// @version      1.0.2
+// @version      1.0.3
 // @namespace    https://boxcrittersmods.ga/authors/sarpnt/
 // @homepage     https://boxcrittersmods.ga/mods/better-inventory/
 // @updateURL    https://github.com/SArpnt/Better-inventory/raw/master/Better%20inventory.user.js
@@ -10,12 +10,7 @@
 // @supportURL   https://github.com/SArpnt/Better-inventory/issues
 // @run-at       document-start
 // @grant        none
-// @match        https://boxcritters.com/play/
-// @match        https://boxcritters.com/play/?*
-// @match        https://boxcritters.com/play/#*
-// @match        https://boxcritters.com/play/index.html
-// @match        https://boxcritters.com/play/index.html?*
-// @match        https://boxcritters.com/play/index.html#*
+// @include      /^https:\/\/boxcritters\.com\/play\/(index\.html)?([\?#].*)?$/
 // @require      https://github.com/SArpnt/joinFunction/raw/master/script.js
 // @require      https://github.com/SArpnt/EventHandler/raw/master/script.js
 // @require      https://github.com/SArpnt/cardboard/raw/master/script.user.js
@@ -36,7 +31,7 @@
 	modData.rows = Math.floor(modData.scale * modData.height / 200);
 	modData.columns = Math.floor(modData.scale * modData.width / 200);
 
-	cardboard.on('loadScriptClient', function (t) {
+	cardboard.on('loadScriptWorld', function (t) {
 		t.innerHTML = t.innerHTML.replace(
 			/o\s*=\s*i\.inventory/,
 			`o = i.inventory${typeof modData.sortMethod == "string" ?
